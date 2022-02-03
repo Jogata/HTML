@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tags - Tutorial</title>
+    <style>
+        span {
+            color: crimson;
+        }
+    </style>
+</head>
+<body>
+    <h2>HTML <span>&lt;template&gt;</span> Tag</h2>
+    <h3>Definition and Usage</h3>
+    <p>The <span>&lt;template&gt;</span> tag is used as a container to hold some HTML content hidden from the user when the page loads.</p>
+    <p>The content inside <span>&lt;template&gt;</span> can be rendered later with a JavaScript.</p>
+    <p>You can use the <span>&lt;template&gt;</span> tag if you have some HTML code you want to use over and over again, but not until you ask for it. To do this without the <span>&lt;template&gt;</span> tag, you have to create the HTML code with JavaScript to prevent the browser from rendering the code.</p>
+    <h3></h3>
+    <button onclick="showContent()">Show hidden content</button>
+
+    <template>
+        <h2>Picture</h2>
+        <img src="./assets/tenor-Copy.gif">
+    </template>
+        
+    <script>
+        function showContent() {
+          const temp = document.getElementsByTagName("template")[0];
+          const clon = temp.content.cloneNode(true);
+          document.body.appendChild(clon);
+        }
+    </script>
+</body>
+</html>
