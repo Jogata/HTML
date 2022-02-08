@@ -18,7 +18,7 @@
     <p>The content inside <span>&lt;template&gt;</span> can be rendered later with a JavaScript.</p>
     <p>You can use the <span>&lt;template&gt;</span> tag if you have some HTML code you want to use over and over again, but not until you ask for it. To do this without the <span>&lt;template&gt;</span> tag, you have to create the HTML code with JavaScript to prevent the browser from rendering the code.</p>
     <h3>Example</h3>
-    <button onclick="showContent()">Show hidden content</button>
+    <button onclick="showTemplate()">Show template content</button>
 
     <div id="show-template"></div>
 
@@ -28,7 +28,7 @@
     </template>
         
     <script>
-        function showContent() {
+        function showTemplate() {
           const temp = document.getElementsByTagName("template")[0];
           const div = document.getElementById("show-template");
           const clon = temp.content.cloneNode(true);
@@ -120,6 +120,7 @@
     <hr>
 
     <h2>HTML <span>&lt;details&gt;</span> Tag</h2>
+    <h3>Definition and Usage</h3>
     <p>The <span>&lt;details&gt;</span> tag specifies additional details that the user can open and close on demand.</p>
     <p>The <span>&lt;details&gt;</span> tag is often used to create an interactive widget that the user can open and close.</p>
     
@@ -134,5 +135,38 @@
         <p>To be open by default - add <span class="important">open</span> attribute. (<span class="important">&lt;details open&gt;</span>)</p>
       </cite>
     </fieldset>
+
+    <hr>
+    <hr>
+
+    <h2>HTML <span>&lt;dialog&gt;</span> Tag</h2>
+    <h3>Definition and Usage</h3>
+    <p>The <span>&lt;dialog&gt;</span> tag defines a dialog box or subwindow on top of the content.</p>
+    <p>The <span>&lt;dialog&gt;</span> element makes it easy to create popup dialogs and modals on a web page.</p>
+
+    <fieldset>
+      <legend><b>Example</b></legend>
+      <button onclick="showDialog()">Display the dialog box</button>
+      
+      <dialog id="dialog-box" style="color: rebeccapurple; border-radius: 20px; border: 2px solid royalblue;">
+        <p>This is an open dialog window</p>
+        <button onclick="hideDialog()" style="display: block; margin: auto;">Close</button>
+      </dialog>
+  
+      <cite>
+      <p>By default, the dialog box is closed. To open it - add <span class="important">open</span> attribute. (<span class="important">&lt;dialog open&gt;</span>). To open as modal - use <span class="important">showModal()</span> method.</p>
+      </cite>
+    </fieldset>
+   
+    <script>
+        function showDialog() {
+          const dialog = document.getElementById("dialog-box");
+          dialog.setAttribute('open', 'true');
+        }
+        function hideDialog() {
+          const dialog = document.getElementById("dialog-box");
+          dialog.removeAttribute('open');
+        }
+    </script>
 </body>
 </html>
