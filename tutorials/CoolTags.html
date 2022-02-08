@@ -146,7 +146,8 @@
 
     <fieldset>
       <legend><b>Example</b></legend>
-      <button onclick="showDialog()">Display the dialog box</button>
+      <button onclick="showDialog()">Display the dialog modelessly <cite><span style="vertical-align: super; font-size: 0.7rem" title="Interaction with content outside of the dialog is allowed">[1]</span></cite></button>
+      <button onclick="showDialogModal()">Display the dialog as a modal <cite><span style="vertical-align: super; font-size: 0.7rem" title="Interaction with content outside of the dialog is blocked">[2]</span></cite></button>
       
       <dialog id="dialog-box" style="color: rebeccapurple; border-radius: 20px; border: 2px solid royalblue;">
         <p>This is an open dialog window</p>
@@ -161,11 +162,16 @@
     <script>
         function showDialog() {
           const dialog = document.getElementById("dialog-box");
-          dialog.setAttribute('open', 'true');
+          dialog.show();
         }
         function hideDialog() {
           const dialog = document.getElementById("dialog-box");
-          dialog.removeAttribute('open');
+          dialog.close();
+        }
+        // Modal version
+        function showDialogModal() {
+          const dialog = document.getElementById("dialog-box");
+          dialog.showModal();
         }
     </script>
 </body>
