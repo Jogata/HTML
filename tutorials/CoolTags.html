@@ -18,7 +18,7 @@
     <p>The content inside <span>&lt;template&gt;</span> can be rendered later with a JavaScript.</p>
     <p>You can use the <span>&lt;template&gt;</span> tag if you have some HTML code you want to use over and over again, but not until you ask for it. To do this without the <span>&lt;template&gt;</span> tag, you have to create the HTML code with JavaScript to prevent the browser from rendering the code.</p>
     <h3>Example</h3>
-    <button onclick="showTemplate()">Show template content</button>
+    <button onclick="showTemplate()">Render new template</button>
 
     <div id="show-template"></div>
 
@@ -58,14 +58,14 @@
           <input type="radio" name="size" id="size_3" value="large">
           <label for="size_3">Large</label>
         </p>
-        <p class="important"> <cite>When reading this form, a screen reader will speak "Fruit juice size small" for the first widget, "Fruit juice size medium" for the second, and "Fruit juice size large" for the third.</cite> </p>
+        <p class="important"> <em>When reading this form, a screen reader will speak "Fruit juice size small" for the first widget, "Fruit juice size medium" for the second, and "Fruit juice size large" for the third.</em> </p>
         <fieldset disabled>
           <legend>Disabled fieldset</legend>
           <p>
             <input type="radio" name="size" id="size_1" value="small">
             <label for="size_1">Disabled</label>
           </p>
-          <p><cite>The <span>disabled</span> attribute is a boolean attribute. A disabled fieldset is unusable and un-clickable.</cite></p>
+          <p><em>The <span>disabled</span> attribute is a boolean attribute. A disabled fieldset is unusable and un-clickable.</em></p>
         </fieldset>
       </fieldset>
     </form>
@@ -76,8 +76,7 @@
     <h2>HTML <span>&lt;datalist&gt;</span> Tag</h2>
     <h3>Definition and Usage</h3>
     <p>The <span>&lt;datalist&gt;</span> tag specifies a list of pre-defined options for an <span>&lt;input&gt;</span> element.</p>
-    <p>The <span>&lt;datalist&gt;</span> tag is used to provide an "autocomplete" feature for <span>&lt;input&gt;</span> elements. Users will see a drop-down list of pre-defined options as they input data.</p>
-    <p>The <span>&lt;datalist&gt;</span> element's id attribute must be equal to the <span>&lt;input&gt;</span> element's list attribute (this binds them together).</p>
+    <p>The <span>&lt;datalist&gt;</span> tag is used to provide an "autocomplete" feature for <span>&lt;input&gt;</span> elements. Users will see a drop-down list of pre-defined options as they input data. They can select one of those suggested values or type in their own value</p>
 
     <fieldset>
       <legend><b>Example</b></legend>
@@ -93,6 +92,7 @@
         </datalist>
         <input type="submit">
       </form>
+      <em><p>The <span>&lt;datalist&gt;</span> element's <b>id</b> attribute must be equal to the <span>&lt;input&gt;</span> element's <b>list</b> attribute (this binds them together).</p></em>
     </fieldset>
 
     <p><strong>Note:</strong> The datalist tag is not supported in Safari 12.0 (or earlier).</p>
@@ -125,15 +125,21 @@
     <p>The <span>&lt;details&gt;</span> tag is often used to create an interactive widget that the user can open and close.</p>
     
     <fieldset>
-      <legend><b>Example</b></legend>
+      <legend><b>Example (closed by default)</b></legend>
       <details>
         <summary>Epcot Center</summary>
         <p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.</p>
       </details>
-      <cite>
-        <p>By default, the widget is closed. When open, it expands, and displays the content within.</p>
-        <p>To be open by default - add <span class="important">open</span> attribute. (<span class="important">&lt;details open&gt;</span>)</p>
-      </cite>
+      <em>
+        <p>By default, the widget is closed. When open, it expands, and displays the content within. To be open by default - add <span class="important">open</span> attribute. (<span class="important">&lt;details open&gt;</span>)</p>
+      </em>
+      <fieldset>
+        <legend><b>Example <span class="important">(open by default)</span></b></legend>
+        <details open>
+          <summary>Epcot Center</summary>
+          <p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.</p>
+        </details>
+      </fieldset>
     </fieldset>
 
     <hr>
@@ -146,17 +152,17 @@
 
     <fieldset>
       <legend><b>Example</b></legend>
-      <button onclick="showDialog()">Display the dialog modelessly <cite><span style="vertical-align: super; font-size: 0.7rem" title="Interaction with content outside of the dialog is allowed">[1]</span></cite></button>
-      <button onclick="showDialogModal()">Display the dialog as a modal <cite><span style="vertical-align: super; font-size: 0.7rem" title="Interaction with content outside of the dialog is blocked">[2]</span></cite></button>
+      <button onclick="showDialog()">Display the dialog modelessly <em><span style="vertical-align: super; font-size: 0.7rem" title="Interaction with content outside of the dialog is allowed">[1]</span></em></button>
+      <button onclick="showDialogModal()">Display the dialog as a modal <em><span style="vertical-align: super; font-size: 0.7rem" title="Interaction with content outside of the dialog is blocked">[2]</span></em></button>
       
       <dialog id="dialog-box" style="color: rebeccapurple; border-radius: 20px; border: 2px solid royalblue;">
         <p>This is an open dialog window</p>
         <button onclick="hideDialog()" style="display: block; margin: auto;">Close</button>
       </dialog>
   
-      <cite>
+      <em>
       <p>By default, the dialog box is closed. To open it - add <span class="important">open</span> attribute. (<span class="important">&lt;dialog open&gt;</span>). To open as modal - use <span class="important">showModal()</span> method.</p>
-      </cite>
+      </em>
     </fieldset>
    
     <script>
@@ -186,6 +192,19 @@
     <fieldset>
       <legend><b>Example</b></legend>
       <p><dfn title="HyperText Markup Language">HTML</dfn> is the standard markup language for creating web pages.</p>
+    </fieldset>
+
+    <hr>
+    <hr>
+
+    <h2>HTML <span>&lt;em&gt;</span> Tag</h2>
+    <h3>Definition and Usage</h3>
+    <p>The <span>&lt;em&gt;</span> tag is used to define <span title="give special importance to something said or written" style="color: royalblue;">emphasized</span> text. The text is typically displayed in <dfn style="font-style: italic;">italic</dfn>.</p>
+    <p>A screen reader will pronounce the words in <span>&lt;em&gt;</span> with an emphasis, using verbal stress.</p>
+    
+    <fieldset>
+      <legend><b>Example</b></legend>
+      <p>You <em>have</em> to hurry up!</p>
     </fieldset>
 
 </body>
