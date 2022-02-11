@@ -65,7 +65,7 @@
             <input type="radio" name="size" id="size_1" value="small">
             <label for="size_1">Disabled</label>
           </p>
-          <p><em>The <span>disabled</span> attribute is a boolean attribute. A disabled fieldset is unusable and un-clickable.</em></p>
+          <p><em>The <span>disabled</span> attribute is a boolean attribute. A disabled fieldset is unusable and un-clickable. You can disable the entire fieldset or a single input.</em></p>
         </fieldset>
       </fieldset>
     </form>
@@ -73,10 +73,10 @@
     <hr>
     <hr>
 
-    <h2>HTML <span>&lt;datalist&gt;</span> Tag</h2>
+    <h2 id="datalist">HTML <span>&lt;datalist&gt;</span> Tag</h2>
     <h3>Definition and Usage</h3>
     <p>The <span>&lt;datalist&gt;</span> tag specifies a list of pre-defined options for an <span>&lt;input&gt;</span> element.</p>
-    <p>The <span>&lt;datalist&gt;</span> tag is used to provide an "autocomplete" feature for <span>&lt;input&gt;</span> elements. Users will see a drop-down list of pre-defined options as they input data. They can select one of those suggested values or type in their own value</p>
+    <p>The <span>&lt;datalist&gt;</span> tag is used to provide an "autocomplete" feature for <span>&lt;input&gt;</span> elements. Users will see a drop-down list of pre-defined options as they input data. They can select one of those suggested values or type in their own value.</p>
 
     <fieldset>
       <legend><b>Example</b></legend>
@@ -92,10 +92,38 @@
         </datalist>
         <input type="submit">
       </form>
-      <em><p>The <span>&lt;datalist&gt;</span> element's <b>id</b> attribute must be equal to the <span>&lt;input&gt;</span> element's <b>list</b> attribute (this binds them together).</p></em>
+      <ul>
+        <li>
+          <p><em>The <span>&lt;datalist&gt;</span> element's <b>id</b> attribute must be equal to the <span>&lt;input&gt;</span> element's <b>list</b> attribute (this binds them together).</em></p>
+        </li>
+        <li>
+          <p><em>You can disable each option, using the attribute <span>disabled</span>.</em></p>
+        </li>
+      </ul>
     </fieldset>
 
     <p><strong>Note:</strong> The datalist tag is not supported in Safari 12.0 (or earlier).</p>
+
+    <hr>
+    <hr>
+
+    <h2 id="select">HTML <span>&lt;select&gt;</span> Tag</h2>
+    <h3>Definition and Usage</h3>
+    <p>The <span>&lt;select&gt;</span> tag specifies a list of pre-defined options for an <span>&lt;input&gt;</span> element.</p>
+    <p>Unlike <span>&lt;<a href="#datalist" style="color: crimson;">datalist</a>&gt;</span> tag, <span>&lt;select&gt;</span> doesn't allow users to enter their own value.</p>
+
+    <fieldset>
+      <legend><b>Example</b></legend>
+      <label for="cars">Choose a car:</label>
+      <select name="cars" id="cars">
+        <option value="">--Please choose an option--</option>
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+        <option value="mercedes" disabled>Mercedes</option>
+        <option value="audi">Audi</option>
+      </select>
+      <p><em>You can disable each option, using <span>disabled</span> attribute. A disabled option is un-clickable.</em></p>
+    </fieldset>
 
     <hr>
     <hr>
@@ -123,18 +151,24 @@
     <h3>Definition and Usage</h3>
     <p>The <span>&lt;details&gt;</span> tag specifies additional details that the user can open and close on demand.</p>
     <p>The <span>&lt;details&gt;</span> tag is often used to create an interactive widget that the user can open and close.</p>
-    
+
     <fieldset>
-      <legend><b>Example (closed by default)</b></legend>
-      <details>
-        <summary>Epcot Center</summary>
-        <p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.</p>
-      </details>
+      <legend><b>Examples</b></legend>
       <em>
-        <p>By default, the widget is closed. When open, it expands, and displays the content within. To be open by default - add <span class="important">open</span> attribute. (<span class="important">&lt;details open&gt;</span>)</p>
+        <p>By default, the widget is closed. When open, it expands, and displays the content within.</p>
       </em>
       <fieldset>
-        <legend><b>Example <span class="important">(open by default)</span></b></legend>
+        <legend><b>Closed by default</b></legend>
+        <details>
+          <summary>Epcot Center</summary>
+          <p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.</p>
+        </details>
+      </fieldset>
+      <em>
+        <p>To be open by default - add <span class="important">open</span> attribute. (<span class="important">&lt;details open&gt;</span>).</p>
+      </em>
+      <fieldset>
+        <legend><b class="important">Open by default</b></legend>
         <details open>
           <summary>Epcot Center</summary>
           <p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.</p>
@@ -218,7 +252,7 @@
     <fieldset>
       <legend><b>Example</b></legend>
       <p>My favorite color is <del cite="doc.html" datetime="2015-09-15T22:55:03Z">blue</del> <ins>red</ins>.</p>
-
+      <hr>
       <ul>
         <li>
           <em>The <span class="important">cite</span> attribute specifies a URL to a document that explains the reason why the text was inserted/changed.</em>
@@ -226,11 +260,10 @@
         <li>
           <em>The <span class="important">datetime</span> attribute specifies the date and time of when the text was inserted/changed.</em>
         </li>
-        <!-- <li> -->
-          <!-- </li> -->
-        </ul>
-        <hr>
-        <em>Both attributes has no visual effect, can be used by screen readers only.</em>
+        <li>
+          <em>Both attributes has no visual effect, can be used by screen readers only.</em>
+        </li>
+      </ul>
     </fieldset>
 
 </body>
