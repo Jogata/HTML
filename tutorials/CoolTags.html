@@ -266,5 +266,21 @@
       </ul>
     </fieldset>
 
+    <hr>
+    <hr>
+
+    <h2> HTML <span>&lt;output&gt;</span> Tag</h2>
+    <h3>Definition and Usage</h3>
+    <p>The <span>&lt;output&gt;</span> tag is a container element into which can be injected the results of a calculation or the outcome of a user action.</p>
+
+    <fieldset>
+      <legend><b>Example</b></legend>
+      <form oninput="result.value=parseInt(a.value)+parseInt(b.value)">
+        <input type="range" id="b" name="b" value="50" /> +
+        <input type="number" id="a" name="a" value="10" /> =
+        <output name="result" for="a b">60</output>
+      </form>
+    </fieldset>
+
 </body>
 </html>
