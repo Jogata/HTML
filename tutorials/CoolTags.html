@@ -419,6 +419,25 @@
   <hr>
   <hr>
 
+  <h2> HTML <span>&lt;picture&gt;</span> Tag</h2>
+  <h3>Definition and Usage</h3>
+  <p>The most common use of the <span>&lt;picture&gt;</span> element will be for art direction in responsive designs. Instead of having one image that is scaled up or down based on the viewport width, multiple images can be designed to more nicely fill the browser viewport.</p>
+  <p>The <span>&lt;picture&gt;</span> element contains two tags: one or more <span>&lt;source&gt;</span> tags and one <span>&lt;img&gt;</span> tag.</p>
+  <p>The browser will look for the first <span>&lt;source&gt;</span> element where the media query matches the current viewport width, and then it will display the proper image (specified in the srcset attribute). The <span>&lt;img&gt;</span> element is required as the last child of the <span>&lt;picture&gt;</span> element, as a fallback option if none of the source tags matches.</p>
+
+  <fieldset>
+    <legend><b>Example</b></legend>
+    <picture>
+      <source media="(min-width:1100px)" srcset="../../CSS/assets/img/120372783_340812587254299_774244032306180550_n.jpg">
+      <source media="(min-width:900px)" srcset="../../CSS/assets/img/210603643_1010676219690043_7853467171473160756_n.jpg">
+      <source media="(min-width:700px)" srcset="../../CSS/assets/img/72614063_433236090677267_2807365040358828412_n.jpg">
+      <img src="../../CSS/assets/img/72614063_433236090677267_2807365040358828412_n.jpg" alt="Ivet" style="width: 100%;">
+    </picture> 
+  </fieldset>
+
+  <hr>
+  <hr>
+
 </body>
 
 </html>
